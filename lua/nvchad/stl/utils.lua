@@ -84,7 +84,7 @@ M.modes = {
 M.file = function()
   local icon = "󰈚"
   local path = vim.api.nvim_buf_get_name(M.stbufnr())
-  local name = (path == "" and "Empty ") or path:match "([^/\\]+)[/\\]*$"
+  local name = (path == "" and "Empty ") or path:match "(?<=workspace\/).+"
 
   if name ~= "Empty " then
     local devicons_present, devicons = pcall(require, "nvim-web-devicons")
